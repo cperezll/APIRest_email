@@ -1,0 +1,13 @@
+
+body{
+    background: #f0f0f0 !important;
+}
+
+.image !important{
+    width: 30px;
+    height: 20px;
+}
+
+.column {
+    width: 500px !important;
+}

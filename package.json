@@ -1,0 +1,35 @@
+{
+  "name": "editor",
+  "version": "1.0.0",
+  "description": "Tool to serve our templates in edition mode",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://gitlab.com/geniusdevelopmentkit/editor.git"
+  },
+  "author": "Sogeti",
+  "license": "UNLICENSED",
+  "bugs": {
+    "url": "https://gitlab.com/geniusdevelopmentkit/editor/issues"
+  },
+  "homepage": "https://gitlab.com/geniusdevelopmentkit/editor#readme",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "bcrypt-nodejs": "0.0.3",
+    "body-parser": "^1.18.3",
+    "crypto": "^1.0.1",
+    "express": "^4.16.4",
+    "express-flash": "0.0.2",
+    "express-handlebars": "^3.0.0",
+    "jwt-simple": "^0.5.5",
+    "moment": "^2.23.0",
+    "mongoose": "^5.4.4",
+    "nodemon": "^1.18.9",
+    "path": "^0.12.7",
+    "semantic-ui": "^2.4.2"
+  }
+}

@@ -1,0 +1,55 @@
+<div id="users">
+    <div class="ui two column grid">
+        <div class="column">
+        </div>
+        <div class="column">
+            <div class="ui three column  grid left">
+                <div id="addUser" class="ui vertical animated  green button inverted" tabindex="0">
+                    <div class="hidden content">Add user</div>
+                    <div class="visible content">
+                        <i type="submit" class="user plus icon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+            <div class="ui divided items">
+                <div class="item">
+                    <div class="content">
+                        <div class="description">
+                            <table class="ui single line table">
+                                <thead>
+                                    <tr>
+                                        <th>User Name</th>
+                                        <th>Registration Date</th>
+                                        <th>E-mail address</th>
+                                        <th>Status user</th>
+                                    </tr>
+                                </thead>
+                                <tbody id="tablita">
+                                    {{#each usersList}}
+                                        <tr>
+                                            <td>{{this.name}}</td>
+                                            <td>{{signupDate}}</td>
+                                            <td>{{this.email}}</td>
+                                            <td>No</td>
+                                            <td>
+                                                <div class="ui icon buttons">
+                                                    <button class="ui blue button active">
+                                                        <i class="right user times icon"></i>
+                                                    </button>
+                                                </div>
+                                            </td>
+                                        </tr>
+                                    {{/each}}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="column">
+        </div>
+    </div>
+</div>
