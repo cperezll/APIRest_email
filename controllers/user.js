@@ -15,10 +15,29 @@ function getUsers(req, res) {
     })
 }
 
+function signUpNewUser(req, res) {
+
+    console.log(" >email ",  req.body.email);
+    console.log(" >projectName ",  req.body.projectName);
+
+    const newUser = new User({
+        projectName: req.body.projectName,
+        email: req.body.email,
+        password: req.body.password,
+        statusProject: req.body.statusProject
+    })
+
+    newUser.save((err) => {
+        if (err) return res.status(500).send({message: `Error creating the newUser ${err}`})
+
+        return res.status(200).send({ token: tokenServices.createToken(newUser) })
+    })
+}
+
 function signUp(req, res) {
     const user = new User({
         email: req.body.email,
-        displayName: req.body.displayName,
+        projectName: req.body.projectName,
         password: req.body.password
     })
 
@@ -84,9 +103,27 @@ function signIn(req, res) {
     }
 }
 
+function deleteUser(req, res) {
+    let userEmail = req.params.userEmail
+
+    console.log(" >userEmail: ",userEmail)
+
+    User.findById(userEmail, (err, user) => {
+        if (err) return res.status(500).send({message: `Error retrieving user ${err}`})
+        if (!user) return res.status(404).send({message: "User not found"})
+
+        user.remove(err => {
+            if (err) return res.status(500).send({message: `Error deleting the user ${err}`})
+            res.status(200).send({message: "The user has been deleted"})
+        })
+
+    })
+}
 
 module.exports = {
+    signUpNewUser,
     getUsers,
     signUp,
-    signIn
+    signIn,
+    deleteUser
 }

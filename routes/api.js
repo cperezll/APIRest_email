@@ -17,6 +17,8 @@ api.delete("/product/:productId", productCtrl.deleteProduct)
 api.get("/user", userCtrl.getUsers)
 api.post("/signup", userCtrl.signUp)
 api.post("/signin", userCtrl.signIn)
+api.post("/signupnewuser", userCtrl.signUpNewUser)
+api.delete("/deleteuser/:userEmail", userCtrl.deleteUser)
 
 api.get("/private", auth, (req, res) => {
     res.status(200).send({message: "Access granted"})

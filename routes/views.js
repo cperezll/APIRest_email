@@ -15,6 +15,7 @@ api.get("/login", (req, res) => {
 
 // api.get("/users", auth, (req, res) => {
 api.get("/users", (req, res) => {
+    //axios === fetch
     axios.get(`http://localhost:${config.port}/api/user`).then((value) => {
         console.log(" ========================= ");
         console.log("> :", value.data.users);
@@ -24,16 +25,7 @@ api.get("/users", (req, res) => {
     }).catch((err) => {
         console.log("> err: ", err)
     })
-
-
-
-
-
 })
 
-// api.get("/admin", (req, res) => {
-//     console.log(" > Enter with AdminRol ...")
-//     res.render("admin")
-// })
 
 module.exports = api

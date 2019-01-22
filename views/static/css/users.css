@@ -1,0 +1,20 @@
+.errorProjName{
+    position: fixed !important;
+    margin-top: 40px !important;
+}
+
+.errorEmail{
+    position: fixed !important;
+    margin-top: 40px !important;
+}
+
+.errorPassw{
+    position: fixed !important;
+    margin-top: 40px !important;
+}
+
+.mainViewUsers{
+    width: 500px;
+    margin-left: 30%;
+    margin-top: 20%;
+}

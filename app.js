@@ -31,12 +31,6 @@ app.use("/", views)
 
 app.use(express.static("."));
 
-//Access with rol Admin
-app.get("/admin", (req, res) => {
-    console.log(" > Enter with AdminRol ...")
-    res.render("admin")
-})
-
 //Access to part of users
 // app.get("/users", (req, res) => {
 //     res.render("users")

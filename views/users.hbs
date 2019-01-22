@@ -1,55 +1,101 @@
 <div id="users">
-    <div class="ui two column grid">
-        <div class="column">
-        </div>
-        <div class="column">
-            <div class="ui three column  grid left">
-                <div id="addUser" class="ui vertical animated  green button inverted" tabindex="0">
-                    <div class="hidden content">Add user</div>
-                    <div class="visible content">
-                        <i type="submit" class="user plus icon"></i>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="column">
-            <div class="ui divided items">
-                <div class="item">
-                    <div class="content">
-                        <div class="description">
-                            <table class="ui single line table">
-                                <thead>
-                                    <tr>
-                                        <th>User Name</th>
-                                        <th>Registration Date</th>
-                                        <th>E-mail address</th>
-                                        <th>Status user</th>
-                                    </tr>
-                                </thead>
-                                <tbody id="tablita">
-                                    {{#each usersList}}
-                                        <tr>
-                                            <td>{{this.name}}</td>
-                                            <td>{{signupDate}}</td>
-                                            <td>{{this.email}}</td>
-                                            <td>No</td>
-                                            <td>
-                                                <div class="ui icon buttons">
-                                                    <button class="ui blue button active">
-                                                        <i class="right user times icon"></i>
-                                                    </button>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    {{/each}}
-                                </tbody>
-                            </table>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="column">
+    <div id="addUser" class="ui vertical animated  green button inverted" tabindex="0">
+        <div class="hidden content">Add user</div>
+        <div class="visible content">
+            <i type="submit" class="user plus icon"></i>
         </div>
     </div>
+    <div class="item mainViewUsers">
+        <div class="content">
+            <div class="description">
+                <table class="ui single line table">
+                    <thead>
+                        <tr>
+                            <th>Project Name</th>
+                            <th>E-mail address</th>
+                            <th>Registration Date</th>
+                            <th>Status Project</th>
+                            <th>Admin</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr id="infoNewUser">
+                            <td>
+                                <div class="mini ui input focus field inputNewParameter">
+                                    <input type="text" placeholder="Project Name" id="projectName">
+                                    <div class="ui pointing red basic label errorProjName">
+                                        Please enter a correct value
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="mini ui input focus field inputNewParameter">
+                                    <input type="text" placeholder="E-mail" id="email">
+                                    <div class="ui pointing red basic label errorEmail">
+                                        Please enter a correct value
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="mini ui input focus field inputNewParameter">
+                                    <input type="text" placeholder="password" id="password">
+                                    <div class="ui pointing red basic label errorPassw">
+                                        Please enter a correct value
+                                    </div>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="mini ui input focus dropdown item field inputNewParameter">
+                                    <input type="text" placeholder="Status project" id="statusProject">
+                                </div>
+                            </td>
+                            <td>
+                                <!-- <div class="mini ui input focus">
+                                <input type="text" placeholder="Admin rol">
+                            </div> -->
+                        </td>
+                        <td>
+                            <button class="ui green button active insertNewUser">
+                                <i class="center user plus icon"></i>
+                            </button>
+                        </td>
+
+                    </tr>
+                    {{#each usersList}}
+                    <tr id='user_{{this.email}}' class="userItemContainer">
+                        <td>{{this.projectName}}</td>
+                        <td>{{this.email}}</td>
+                        <td>{{this.signupDate}}</td>
+                        <td>{{this.status}}</td>
+                        <td>{{this.rolAdmin}}</td>
+                        <td class="deleteUser">
+                            <div class="ui icon buttons">
+                                <button class="ui blue button active">
+                                    <i class="right user times icon"></i>
+                                </button>
+                            </div>
+                        </td>
+                    </tr>
+                    {{/each}}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<div id="delete_element_modal" class="ui basic modal">
+    <div class="header">Action for remove user</div>
+    <div class="content">
+        <div class="description">
+            This is a message for eliminate an user of DB ...
+        </div>
+    </div>
+    <div class="actions">
+        <div class="ui red deny button">Cancel</div>
+        <div class="ui positive right labeled icon button">
+            Accept
+            <i class="checkmark icon"></i>
+        </div>
+    </div>
+</div>
 </div>

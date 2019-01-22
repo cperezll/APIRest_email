@@ -1,8 +1,9 @@
 $(document).ready(function(){
-    const formLogin = document.querySelector("#login")
+    // const formLogin = document.querySelector("#login")
+    //
+    // formLogin.addEventListener("submit", event => {
 
-    formLogin.addEventListener("submit", event => {
-
+    $("#login").submit(() => {
         let email = document.querySelector("#login [type=emailAdmin]").value
         let password = document.querySelector("#login [type=passAdmin]").value
 
@@ -21,7 +22,7 @@ $(document).ready(function(){
                 displayMainView()
             },
             error: function(xhr, ajaxOptions, thrownError) {
-                console.log("> received data 0:", xhr.responseJSON);
+                console.log("> received data:", xhr.responseJSON);
                 $('.message').removeClass('hidden')
                 $('.message').addClass('visible')
             }
@@ -39,7 +40,7 @@ $(document).ready(function(){
                 $("body").html(data);
             },
             error: function(xhr, ajaxOptions, thrownError) {
-                console.log("> received data 2:", xhr.responseJSON);
+                console.log("> received data:", xhr.responseJSON);
             }
         })
     }
