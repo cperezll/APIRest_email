@@ -1,0 +1,22 @@
+#mainText{
+    padding-top:5vh;
+}
+
+#secondaryText{
+    margin-top: -10px;
+    text-align: center;
+}
+
+#accesInputsAdmin {
+    width: 56%;
+    margin-top: 8vh;
+}
+
+div .field {
+    width: 75%;
+    margin-left: 14% !important;
+}
+
+#styleFormAdmin {
+    background: #f3f3f3;
+}
