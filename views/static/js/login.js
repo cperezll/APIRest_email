@@ -1,11 +1,11 @@
 $(document).ready(function(){
-    // const formLogin = document.querySelector("#login")
-    //
-    // formLogin.addEventListener("submit", event => {
 
     $("#login").submit(() => {
         let email = document.querySelector("#login [type=emailAdmin]").value
         let password = document.querySelector("#login [type=passAdmin]").value
+
+        console.log("> email:",email);
+        console.log("> password:",password );
 
         event.preventDefault()
 

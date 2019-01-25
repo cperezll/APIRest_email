@@ -6,12 +6,12 @@ const userCtrl = require("../controllers/user")
 const auth = require("../middlewares/auth")
 const api = express.Router()
 
-//products
-api.get("/product", auth, productCtrl.getProducts)
-api.get("/product/:productId", productCtrl.getProduct)
-api.post("/product", productCtrl.saveProduct)
-api.put("/product/:productId", productCtrl.updateProduct)
-api.delete("/product/:productId", productCtrl.deleteProduct)
+// //products
+// api.get("/product", auth, productCtrl.getProducts)
+// api.get("/product/:productId", productCtrl.getProduct)
+// api.post("/product", productCtrl.saveProduct)
+// api.put("/product/:productId", productCtrl.updateProduct)
+// api.delete("/product/:productId", productCtrl.deleteProduct)
 
 //user
 api.get("/user", userCtrl.getUsers)
