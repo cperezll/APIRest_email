@@ -1,10 +1,11 @@
 $(document).ready(function(){
 
+    //Variables from a new User
     var statusName = true
     var statusEmail = true
     var statusPassword = true
 
-
+    //Deselect inputs from a new user
     $("#infoNewUser").hide()
     $(".errorProjName").hide()
     $(".errorEmail").hide()

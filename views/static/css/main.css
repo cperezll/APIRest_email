@@ -1,8 +1,13 @@
 .positionMainText {
-    margin-bottom: 40vh;
-    margin-top: 31vh;
+    margin-bottom: 30vh;
+    margin-top: 20vh;
 }
 
 .mainView {
-background: #1b1c1d;
+    background: #242425 !important;
+}
+
+#mainImage {
+    height: 30vh;
+    margin-top: -17px;
 }
