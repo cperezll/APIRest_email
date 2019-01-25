@@ -104,19 +104,19 @@ function signIn(req, res) {
 }
 
 function deleteUser(req, res) {
-    let userEmail = req.params.userEmail
+    let email = req.body.email
 
-    console.log(" >userEmail: ",userEmail)
-
-    User.findById(userEmail, (err, user) => {
+    User.findOne({
+        email: req.body.email
+    }, (err, user) => {
         if (err) return res.status(500).send({message: `Error retrieving user ${err}`})
-        if (!user) return res.status(404).send({message: "User not found"})
+            if (!user) return res.status(404).send({message: "User not found"})
 
-        user.remove(err => {
-            if (err) return res.status(500).send({message: `Error deleting the user ${err}`})
-            res.status(200).send({message: "The user has been deleted"})
-        })
-
+            user.remove(err => {
+                if (err) return res.status(500).send({message: `Error deleting the user ${err}`})
+                res.status(200).send({message: "The user has been deleted"})
+            })
+            console.log(" >user: ", user)
     })
 }
 

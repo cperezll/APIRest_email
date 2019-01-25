@@ -8,6 +8,9 @@ const config = require("../config")
 const axios = require('axios');
 const api = express.Router()
 
+api.get("/main", (req, res) => {
+    res.render("main")
+})
 
 api.get("/login", (req, res) => {
     res.render("login")

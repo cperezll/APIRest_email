@@ -13,6 +13,7 @@ $(document).ready(function(){
     //Add user for sent news messages
     const addUser = document.getElementById("addUser")
     addUser.addEventListener("click", addUserFunction)
+
     function addUserFunction() {
         $("#infoNewUser").show()
     }
@@ -85,17 +86,21 @@ $(document).ready(function(){
     })
 
     $(".deleteUser").click( function(){
-
         var selectUserEmail = $(this).closest(".userItemContainer").attr("id")
         selectUserEmail = selectUserEmail.split('_')[1]
+        selectUserEmail = $.trim(selectUserEmail)
 
         $('#delete_element_modal').modal({
             //closable: false,
             offset: 0,
             onApprove: function() {
+
                 $.ajax({
-                    url: "api/deleteuser/"+ selectUserEmail,
+                    url: "api/deleteuser/",
                     type:'DELETE',
+                    data:{
+                        'email':selectUserEmail
+                    },
                     success: function(data){
                         console.log(" > data:" ,data);
                         window.location.reload()
@@ -105,24 +110,13 @@ $(document).ready(function(){
                     }
                 })
                 console.log(" > Your was have accept the request.");
-
             },
             onDeny: function() {
                 console.log(" > Your was have cancel the request.");
             }
         }).modal('show')
 
-        // $.ajax({
-        //     url: "api/deleteuser/"+ selectUserEmail,
-        //     type:'DELETE',
-        //     success: function(data){
-        //         console.log(" > data:" ,data);
-        //         window.location.reload()
-        //     },
-        //     error: function(xhr, ajaxOptions, thrownError) {
-        //         console.log("> received data:", xhr.responseJSON);
-        //     }
-        // })
+
     })
 
 })
